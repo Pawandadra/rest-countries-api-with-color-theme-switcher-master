@@ -1,11 +1,13 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const countriesList = document.getElementById('countriesList');
+    let countriesData = [];
 
     async function fetchCountries() {
         try {
-            const response = await fetch('data.json');
+            const response = await fetch('assets/data.json');
             const countries = await response.json();
+            countriesData = countries;
             displayCountries(countries);
         } catch (error) {
             console.error('Error fetching countries:', error);
@@ -14,6 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function displayCountries(countries) {
         countriesList.innerHTML = '';
+
         countries.forEach(country => {
             const population = country.population ? country.population.toLocaleString() : 'N/A';
             const area = country.area ? country.area.toLocaleString() : 'N/A';
@@ -31,14 +34,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     <p><span class="bold">Population:</span> ${population}</p>
                     <p><span class="bold">Region:</span> ${country.region || 'N/A'}</p>
                     <p><span class="bold">Capital:</span> ${country.capital || 'N/A'}</p>
-                    <!-- <p><span class="bold">Subregion:</span> ${country.subregion || 'N/A'}</p>
-                    <p><span class="bold>Area:</strong> ${area} km²</p>
-                    <p><span class="bold">Languages:</span> ${languages}</p>
-                    <p><span class="bold">Currencies:</span> ${currencies}</p>
-                    <p><span class="bold">Timezones:</span> ${timezones}</p>
-                    <p><span class="bold">Borders:</span> ${borders}</p> -->
                 </div>
             `;
+            countryElement.addEventListener('click', () => {
+                const url = `${window.location.origin}/${encodeURIComponent(country.name.toLowerCase())}`;
+                window.open(url, '_top');
+            });
             countriesList.appendChild(countryElement);
         });
 
@@ -46,14 +47,32 @@ document.addEventListener('DOMContentLoaded', function() {
         searchInput.addEventListener('input', function() {
             const searchValue = searchInput.value.toLowerCase();
             const countryElements = document.querySelectorAll('.country');
+            let hasMatch = false;
+
             countryElements.forEach(countryElement => {
                 const countryName = countryElement.querySelector('h2').textContent.toLowerCase();
-                if (countryName.includes(searchValue)) {
-                    countryElement.style.display = 'block';
+                if(countryName.includes(searchValue)){
+                    countryElement.style.display = 'block'
+                    hasMatch = true;
                 } else {
                     countryElement.style.display = 'none';
                 }
             });
+
+            const existingError = document.querySelector('.search-error');
+            if (existingError){
+                existingError.remove();
+            }
+
+            if (!hasMatch && searchValue) {
+                const searchError = document.createElement('div');
+                searchError.classList.add('search-error');
+                searchError.innerHTML =`
+                    <h3><span style="font-weight: 600">${searchInput.value}<span> didn't match any country name</h3>
+                    <p style="font-size: 14px; color: hsl(0, 0%, 52%);">Please try with different keywords<p>
+                `;
+                searchInput.parentElement.parentElement.parentElement.appendChild(searchError);
+            }
         });
     }
 

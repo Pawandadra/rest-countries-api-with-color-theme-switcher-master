@@ -1,0 +1,79 @@
+*{
+    color: var(--White);
+}
+
+:root{
+    --Dark-Blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
+    --Very-Dark-Blue: hsl(207, 26%, 17%); /* Dark Mode Background*/
+    --Extreme-Dark-Blue: hsl(200, 15%, 8%); /* Light Mode Text */
+    --Dark-Gray : hsl(0, 0%, 52%); /* Light Mode Input */
+    --Very-Light-Gray: hsl(0, 0%, 98%); /* Light Mode Background */
+    --White: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
+}
+
+/* Prevent changing background color of input fields while autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--Dark-Blue) inset !important;
+    -webkit-text-fill-color: var(--White) !important;
+}
+
+body{
+    background-color: var(--Very-Dark-Blue);
+}
+
+header{
+    background-color: var(--Dark-Blue);
+}
+
+#darkIcon{
+    color: var(--White);
+}
+
+#lightIcon{
+    display: none;
+}
+
+.outerSearchBox{
+    background-color: var(--Dark-Blue);
+}
+
+.outerSearchBox ion-icon{
+    color: var(--White);
+}
+
+#searchInput{
+    background-color: var(--Dark-Blue);
+}
+
+::placeholder{
+    color: var(--White);
+}
+
+#filterHeading,
+.customOptions{
+    background-color: var(--Dark-Blue);
+}
+
+#filterHeading ion-icon{
+    color: var(--White);
+}
+
+.country {
+    background-color: var(--Dark-Blue);
+}
+
+#backBtn{
+    background-color: var(--Dark-Blue);
+}
+
+#backBtn ion-icon{
+    color: var(--White);
+}
+
+#borders button{
+    /* font-size: 1rem; */
+    background-color: var(--Dark-Blue);
+}

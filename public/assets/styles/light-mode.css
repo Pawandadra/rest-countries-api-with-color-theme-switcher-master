@@ -1,0 +1,75 @@
+*{
+    color: var(--Extreme-Dark-Blue);
+}
+
+:root{
+    --Dark-Blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
+    --Very-Dark-Blue: hsl(207, 26%, 17%); /* Dark Mode Background*/
+    --Extreme-Dark-Blue: hsl(200, 15%, 8%); /* Light Mode Text */
+    --White: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
+}
+
+/* Prevent changing background color of input fields while autocomplete */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px var(--White) inset !important;
+    -webkit-text-fill-color: var(--Extreme-Dark-Blue) !important;
+}
+
+body{
+    background-color: var(--Very-Light-Gray);
+}
+
+header{
+    background-color: var(--White);
+}
+
+#darkIcon{
+    display: none;
+}
+
+#lightIcon{
+    color: var(--Extreme-Dark-Blue);
+}
+
+.outerSearchBox{
+    background-color: var(--White);
+}
+
+.outerSearchBox ion-icon{
+    color: var(--Dark-Gray);
+}
+
+#searchInput{
+    color: var(--Dark-Gray);
+    background-color: var(--White);
+}
+
+#filterHeading,
+.customOptions{
+    color: var(--Extreme-Dark-Blue);
+    background-color: var(--White);
+}
+
+#filterHeading ion-icon{
+    color: var(--Extreme-Dark-Blue);
+}
+
+.country {
+    background-color: var(--White);
+}
+
+#backBtn{
+    background-color: var(--White);
+}
+
+#backBtn ion-icon{
+    color: var(--Extreme-Dark-Blue);
+}
+
+#borders button{
+    /* font-size: 1rem; */
+    background-color: var(--White);
+}

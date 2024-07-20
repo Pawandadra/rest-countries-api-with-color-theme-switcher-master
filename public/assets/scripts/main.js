@@ -1,6 +1,9 @@
 document.addEventListener('DOMContentLoaded', function() {
     const searchInput = document.getElementById('searchInput');
     const countriesList = document.getElementById('countriesList');
+    const filterHeading = document.getElementById('filterHeading');
+    const customOptions = document.querySelector('.customOptions');
+    const customOptionsItems = document.querySelectorAll('.custom-option');
     let countriesData = [];
 
     async function fetchCountries() {
@@ -19,11 +22,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
         countries.forEach(country => {
             const population = country.population ? country.population.toLocaleString() : 'N/A';
-            const area = country.area ? country.area.toLocaleString() : 'N/A';
-            const languages = country.languages ? country.languages.map(lang => lang.name).join(', ') : 'N/A';
-            const currencies = country.currencies ? country.currencies.map(curr => curr.name).join(', ') : 'N/A';
-            const timezones = country.timezones ? country.timezones.join(', ') : 'N/A';
-            const borders = country.borders ? country.borders.join(', ') : 'N/A';
 
             const countryElement = document.createElement('div');
             countryElement.classList.add('country');
@@ -60,6 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
             });
 
             const existingError = document.querySelector('.search-error');
+            
             if (existingError){
                 existingError.remove();
             }
@@ -73,8 +72,41 @@ document.addEventListener('DOMContentLoaded', function() {
                 `;
                 searchInput.parentElement.parentElement.parentElement.appendChild(searchError);
             }
+
+            document.addEventListener("click", function(event) {
+                const filterBox = document.getElementById("filter");
+                const countryCards = document.getElementsByClassName("country");
+
+                const isInCountryCard = Array.from(countryCards).some(card => card.contains(event.target));
+
+                if (filterBox.contains(event.target) || isInCountryCard) {
+                    searchInput.value = "";
+                }
+            });
+        });
+
+        opneDropDown();
+
+        function filterCountries(region) {
+            const filteredCountries = countriesData.filter(country => country.region === region || region === 'All');
+            displayCountries(filteredCountries);
+        }
+    
+        function opneDropDown() {
+            filterHeading.addEventListener('click', () => {
+            customOptions.style.display = customOptions.style.display === 'none' ? 'flex' : 'none';
+            });
+        }
+
+        customOptionsItems.forEach(item => {
+            item.addEventListener('click', () => {
+                const region = item.getAttribute('data-value');
+                filterHeading.innerHTML = `${region} <ion-icon name="chevron-down-outline"></ion-icon>`;
+                customOptions.style.display = 'none';
+                filterCountries(region);
+                opneDropDown()
+            });
         });
     }
-
     fetchCountries();
 });

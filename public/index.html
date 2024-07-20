@@ -6,30 +6,40 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <title>Countries Information</title>
+    <title>REST Countries API</title>
     <link rel="stylesheet" href="./assets/styles/main.css">
+    <link rel="stylesheet" href="./assets/styles/light-mode.css" id="theme">
 </head>
+
 <body>
     <header>
         <h2>Where in the world?</h2>
+        <span id="themeContainer">
+            <ion-icon name="moon-outline" id="lightIcon"></ion-icon>
+            <ion-icon name="moon" id="darkIcon"></ion-icon>
+             Dark Mode
+        </span>
     </header>
     <div class="searchAndFilter">
         <span class="outerSearchBox"><ion-icon name="search-outline"></ion-icon><input type="text" id="searchInput" placeholder="Search for a country..."></span>
-        <span class="outerFilterBox">
-            <select name="" id="filter">
-                <option value="" hidden selected>Filter by Region</option>
-                <option value="Africa">Africa</option>
-                <option value="America">America</option>
-                <option value="Asia">Asia</option>
-                <option value="Europe">Europe</option>
-                <option value="Oceania">Oceania</option>
-            </select>
-        </span>
+        <div id="filter">
+            <div class="custom-select">
+                <div id="filterHeading">Filter by Region <ion-icon name="chevron-down-outline"></ion-icon></div>
+                <div class="customOptions">
+                    <span class="custom-option" data-value="Africa">Africa</span>
+                    <span class="custom-option" data-value="Americas">Americas</span>
+                    <span class="custom-option" data-value="Asia">Asia</span>
+                    <span class="custom-option" data-value="Europe">Europe</span>
+                    <span class="custom-option" data-value="Oceania">Oceania</span>
+                </div>
+            </div>
+        </div>
     </div>
     <main>
         <div id="countriesList"></div>
     </main>
     <script src="./assets/scripts/main.js"></script>
+    <script src="./assets/scripts/change-theme.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

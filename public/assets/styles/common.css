@@ -8,16 +8,6 @@
     "wdth" 100,
     "YTLC" 500;
     font-weight: 300;
-    color: var(--Very-Dark-Blue);
-}
-
-:root{
-    --Dark-Blue: hsl(209, 23%, 22%); /* Dark Mode Elements */
-    --Very-Dark-Blue: hsl(207, 26%, 17%); /* Dark Mode Background*/
-    --Very-Dark-Blue: hsl(200, 15%, 8%); /* Light Mode Text */
-    --Dark-Gray : hsl(0, 0%, 52%); /* Light Mode Input */
-    --Very-Light-Gray: hsl(0, 0%, 98%); /* Light Mode Background */
-    --White: hsl(0, 0%, 100%); /* Dark Mode Text & Light Mode Elements */
 }
 
 .bold{
@@ -27,13 +17,12 @@
 body{
     padding: 0rem 5rem;
     margin-top: 89px;
-    background-color: var(--Very-Light-Gray);
+    padding-bottom: 5rem;
 }
 
 header{
     display: flex;
     align-items: center;
-    background-color: var(--White);
     padding: 25px;
     padding: 0 5rem;
     position: fixed;
@@ -50,11 +39,37 @@ header h2{
     margin-right: auto;
 }
 
-#theme{
+#themeContainer{
     display: flex;
     font-weight: 600;
+    align-items: center;    
+    justify-content: right;
+    cursor: pointer;
 }
 
-#theme ion-icon{
+#themeContainer ion-icon{
     padding: 0 0.5rem;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 768px){
+    header{
+        padding: 5px;
+        padding: 0 3rem;
+        height: 70px;
+    }
+
+    header h2{
+        font-weight: 800;
+        font-size: 1.2rem;
+    }
+    
+    #themeContainer{
+        display: flex;
+        font-weight: 600;
+        align-items: center;
+    }
+    
+    #themeContainer ion-icon{
+        padding: 0 0.5rem;
+    }
 }

@@ -6,17 +6,23 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap" rel="stylesheet">
-    <title>Country Details</title>
+    <title>REST Countries API</title>
     <link rel="stylesheet" href="./assets/styles/details.css">
+    <link rel="stylesheet" href="./assets/styles/light-mode.css" id="theme">
 </head>
 <body>
     <header>
         <h2>Where in the world?</h2>
-        <!-- <span id="theme"><ion-icon name="moon-outline" style="color: #111517;"></ion-icon><ion-icon name="moon" style="color: #111517; display: none;"></ion-icon> Dark Mode</span> -->
+        <span id="themeContainer">
+            <ion-icon name="moon-outline" id="lightIcon"></ion-icon>
+            <ion-icon name="moon" id="darkIcon"></ion-icon>
+             Dark Mode
+        </span>
     </header>
-    <button type="button" id="backBtn" onclick="history.back()"><ion-icon name="arrow-back-outline" style="color: #111517;"></ion-icon> Back </button>
+    <button type="button" id="backBtn" onclick="history.back()"><ion-icon name="arrow-back-outline"></ion-icon> Back </button>
     <div id="countryDetails"></div>
     <script src="./assets/scripts/details.js"></script>
+    <script src="./assets/scripts/change-theme.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>

@@ -44,6 +44,7 @@ header h2{
     font-weight: 600;
     align-items: center;    
     justify-content: right;
+    cursor: pointer;
 }
 
 #themeContainer ion-icon{

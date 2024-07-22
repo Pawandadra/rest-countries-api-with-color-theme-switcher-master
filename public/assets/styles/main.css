@@ -17,6 +17,7 @@
     height: fit-content;
     border-radius: 7px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
 }
 
 .outerSearchBox ion-icon{
@@ -49,6 +50,7 @@
 #filter{
     height: fit-content;
     z-index: 200;
+    cursor: pointer;
 }
 
 #filterHeading,
@@ -94,6 +96,7 @@ main{
     width: 255.391px;
     border-radius: 7px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    cursor: pointer;
 }
 
 .country img{

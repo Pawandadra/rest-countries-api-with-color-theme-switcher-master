@@ -35,7 +35,6 @@
     outline: none;
     width: 100%;
     border-radius: 7px;
-    cursor: pointer;
 }
 
 ::placeholder{
@@ -50,7 +49,6 @@
 #filter{
     height: fit-content;
     z-index: 200;
-    cursor: pointer;
 }
 
 #filterHeading,
@@ -60,7 +58,6 @@
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     font-size: 14px;
     padding: 1rem;
-    cursor: pointer;
 }
 
 #filterHeading{
@@ -97,7 +94,6 @@ main{
     width: 255.391px;
     border-radius: 7px;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    cursor: pointer;
 }
 
 .country img{
@@ -126,4 +122,199 @@ main{
 .country p {
     font-size: 14px;
     line-height: 1.6rem;
+}
+
+@media only screen and (min-width: 375px) and (max-width: 768px){
+    .searchAndFilter{
+        display: block;
+        gap: 0rem;
+        height: fit-content;
+        margin: 1rem 0;
+        margin-top: 6.5rem;
+    }
+
+    .outerSearchBox{
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+        width: 100%;
+        max-width: 370px;
+        height: fit-content;
+        border-radius: 7px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .outerSearchBox ion-icon{
+        --ionicon-stroke-width: 50px;
+        margin: 0.8rem 1.8rem;
+        font-size: 1.3rem;
+    }
+    
+    #searchInput{
+        display: inline;
+        padding: 0.8rem;
+        padding-left: 0;
+        font-size: 12px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        width: 100%;
+        border-radius: 7px;
+    }
+    
+    ::placeholder{
+        font-size: 12px;
+    }
+    
+    .search-error{
+        padding: 2rem;
+        font-size: 0.8rem;
+    }
+    
+    #filter{
+        height: fit-content;
+        margin-top: 2.6rem;
+        position: relative;
+    }
+    
+    #filterHeading,
+    .customOptions{
+        width: 200px;
+        font-size: 12px;
+        padding: 1rem;
+        padding-left: 1.5rem;
+    }
+    
+    #filterHeading{
+        display: flex;
+        height: 47px;
+    }
+    
+    .customOptions{
+        display: none;
+        position: absolute;
+        top: 47px;
+        left: 0;
+    }
+}
+
+@media only screen and (max-width: 375px){
+    .searchAndFilter{
+        display: block;
+        gap: 0rem;
+        height: fit-content;
+        margin: 1rem 0;
+        margin-top: 6.5rem;
+    }
+    
+    .outerSearchBox{
+        display: flex;
+        align-items: center;
+        margin-right: 0;
+        width: 100%;
+        max-width: 370px;
+        height: fit-content;
+        border-radius: 7px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .outerSearchBox ion-icon{
+        --ionicon-stroke-width: 50px;
+        margin: 0.8rem 1.8rem;
+        font-size: 1.3rem;
+    }
+    
+    #searchInput{
+        display: inline;
+        padding: 0.8rem;
+        padding-left: 0;
+        font-size: 12px;
+        font-weight: 400;
+        border: none;
+        outline: none;
+        width: 100%;
+        border-radius: 7px;
+    }
+    
+    ::placeholder{
+        font-size: 12px;
+    }
+    
+    .search-error{
+        padding: 2rem;
+        font-size: 0.8rem;
+    }
+    
+    #filter{
+        height: fit-content;
+        margin-top: 2.6rem;
+        position: relative;
+    }
+    
+    #filterHeading,
+    .customOptions{
+        width: 200px;
+        font-size: 12px;
+        padding: 1rem;
+        padding-left: 1.5rem;
+    }
+    
+    #filterHeading{
+        display: flex;
+        height: 47px;
+    }
+    
+    .customOptions{
+        display: none;
+        position: absolute;
+        top: 47px;
+        left: 0;
+    }
+    
+    main{
+        display: flex;
+    }
+    
+    #countriesList{
+        margin-top: 1rem;
+        display: flex;
+        width: 100vw;
+        gap: 5.2rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+    .country {
+        width: 255.391px;
+        border-radius: 7px;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .country img{
+        width: 255.399px;
+        height: 150px;
+        border-top-right-radius: 7px;
+        border-top-left-radius: 7px;
+        margin-bottom: 0;
+    }
+    
+    #countryInfoPreview{
+        padding: 1.5rem;
+        padding-bottom: 1.9rem;
+        height: 173.172px;
+        margin-top: -0.3rem;
+    }
+    
+    .country h2 {
+        height: 26px;
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+        font-weight: 800;
+        overflow: hidden;
+    }
+    
+    .country p {
+        font-size: 14px;
+        line-height: 1.6rem;
+    }   
 }

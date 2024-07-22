@@ -44,7 +44,6 @@ header h2{
     font-weight: 600;
     align-items: center;    
     justify-content: right;
-    cursor: pointer;
 }
 
 #themeContainer ion-icon{
@@ -52,10 +51,17 @@ header h2{
 }
 
 @media only screen and (min-width: 375px) and (max-width: 768px){
+
+    body{
+        padding: 0 2rem;
+        margin-top: 89px;
+        padding-bottom: 3rem;
+    }
+
     header{
         padding: 5px;
-        padding: 0 3rem;
-        height: 70px;
+        padding: 0 1.5rem;
+        height: 80px;
     }
 
     header h2{
@@ -67,6 +73,37 @@ header h2{
         display: flex;
         font-weight: 600;
         align-items: center;
+        font-size: 0.9rem;
+    }
+    
+    #themeContainer ion-icon{
+        padding: 0 0.5rem;
+    }
+}
+@media only screen and (max-width: 375px){
+    
+    body{
+        padding: 0 1.8rem;
+        margin-top: 89px;
+        padding-bottom: 3rem;
+    }
+    
+    header{
+        padding: 0px;
+        padding: 0 1.1rem;
+        height: 80px;
+    }
+
+    header h2{
+        font-weight: 800;
+        font-size: 0.84rem;
+    }
+    
+    #themeContainer{
+        display: flex;
+        font-weight: 600;
+        align-items: center;
+        font-size: 0.7rem;
     }
     
     #themeContainer ion-icon{

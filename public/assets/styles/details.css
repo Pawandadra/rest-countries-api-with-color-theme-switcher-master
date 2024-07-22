@@ -12,7 +12,6 @@
     border: none;
     border-radius: 7px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
 }
 
 #backBtn ion-icon{
@@ -83,7 +82,6 @@
     margin-left: 1rem;
     margin-top: 1rem;
     padding: 0.5rem 1rem;
-    cursor: pointer;
 }
 
 @media only screen and (min-width: 1100px) and (max-width: 1330px) {  
@@ -252,7 +250,7 @@
 
 @media only screen and (min-width: 375px) and (max-width: 768px) { 
     body{
-        padding: 0rem 3rem;
+        padding: 0rem 2rem;
         padding-bottom: 3rem;
         display: flex;
         flex-direction: column;
@@ -260,10 +258,10 @@
 
     #backBtn{
         width: 120px;
-        margin-top: 1rem;
+        margin-top: 1.8rem;
         margin-bottom: 1rem;
         font-size: 1rem;
-        padding: 0.5rem 1.5rem;
+        padding: 0.5rem 1rem;
         border-radius: 5px;
     }
     
@@ -272,62 +270,171 @@
     }
      
     #countryDetails{
-        margin-top: 1.5rem;
+        margin-top: 2.5rem;
         width: 100%;
         justify-content: center;
-        align-items: center;
+        align-items: flex-start;
         grid-template-columns: 0fr 0fr;
         grid-template-rows: 1fr 2fr;
         grid-template-areas:
         'flag' 'detailsContainer';
-
     }
 
     #countryDetails img{
         justify-self: center;
-        height: 13rem;
-        width: 18.2rem;
+        height: 14.4rem;
+        width: 20rem;
         border-radius: 8px;
     }
     
     #detailsContainer{
         align-self: center;
-        height: 350px;
-        width: 350px;
+        justify-self: center;
+        height: 520px;
+        max-width: 400px;
         margin-left: 0rem;
-        margin: 0rem 0;
+        margin: 0 0;
+        margin-top: 0.6rem;
+        padding: 0rem 1rem;
         grid-template-rows: 1fr 2fr 1fr;
+        /* margin: 0rem 0; */
+        /* grid-template-rows: 66.2656px 301.188px 150px; */
     }
     
     #countryDetails h1{
         font-size: 1.5rem;
-        justify-self: center;
+        height: 1.8rem;
         padding-left: 0rem;
+        padding-top: 0rem;
+        justify-self: left;
+        align-self: center;
     }
     
     #allDetails{
-        column-gap: 3vw;
-        font-size: 12px;
-        height: 200px;
+        font-size: 14px;
+        height: 300px;
         line-height: 2rem;
         flex-direction: column;
-        column-gap: 8vw;
         flex-wrap: nowrap;
-        padding: 0.5rem;
-        padding-top: 0.7rem;
+        padding: 0rem;
+        padding-top: 2rem;
+        margin-bottom: 0;
+    }
+    
+    #allDetails p:nth-child(5){
         margin-bottom: 2rem;
-        height: 200px;
-        line-height: 1.5rem;
+    }
+
+    #borders{
+        font-size: 1rem;
+        padding: 0;
+        padding-top: 1rem;
+        align-self: flex-start;
+    }
+    
+    #borders span{
+        display: block;
+        margin-bottom: 1rem;
+    }
+
+    #borders button{
+        font-size: 14px;
+        border-radius: 5px;
+        margin-left: 0;
+        margin-right: 0.5rem;
+        margin-top: 0.5rem;
+        padding: 0.5rem;
+    }   
+}
+
+@media only screen and (max-width: 375px) { 
+    body{
+        padding: 0rem 1.8rem;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #backBtn{
+        width: 120px;
+        margin-top: 1.8rem;
+        margin-bottom: 1rem;
+        font-size: 0.9rem;
+        padding: 0.5rem -1rem;
+        border-radius: 5px;
+    }
+    
+    #backBtn ion-icon{
+        padding-right: 0.5rem;
+    }
+     
+    #countryDetails{
+        margin-top: 2.2rem;
+        width: 100%;
+        justify-content: center;
+        align-items: flex-start;
+        grid-template-columns: 0fr 0fr;
+        grid-template-rows: 1fr 2fr;
+        grid-template-areas:
+        'flag' 'detailsContainer';
+    }
+
+    #countryDetails img{
+        justify-self: center;
+        height: 14.3rem;
+        width: 19.8rem;
+        border-radius: 8px;
+    }
+    
+    #detailsContainer{
+        align-self: center;
+        height: 500px;
+        width: 93vw;
+        margin-left: 0rem;
+        margin-top: 0.6rem;
+        padding: 0rem 1rem;
+        /* margin: 0rem 0; */
+        grid-template-rows: 66.2656px 301.188px 150px;
+    }
+    
+    #countryDetails h1{
+        font-size: 1.3rem;
+        height: 1.5rem;
+        padding-top: 0rem;
+        justify-self: left;
+        align-self: center;
+    }
+    
+    #allDetails{
+        font-size: 14px;
+        line-height: 2rem;
+        height: 290px;
+        flex-direction: column;
+        flex-wrap: nowrap;
+        padding: 0rem;
+        padding-top: 0.1rem;
+        margin-bottom: 0;
+    }
+
+    #allDetails p:nth-child(5){
+        margin-bottom: 2rem;
     }
     
     #borders{
-        font-size: 12px;
+        font-size: 16px;
+        padding: 0;
+        padding-top: 1rem;
+        align-self: flex-start;
     }
     
+    #borders span{
+        display: block;
+        margin-bottom: 1rem;
+    }
     #borders button{
         font-size: 12px;
         border-radius: 5px;
-        margin-left: 0.5rem;
+        margin-left: 0;
+        margin-right: 0.5rem;
         margin-top: 0.5rem;
         padding: 0.5rem;
     }   

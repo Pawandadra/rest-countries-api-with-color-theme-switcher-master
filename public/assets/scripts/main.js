@@ -101,7 +101,7 @@ document.addEventListener('DOMContentLoaded', function() {
         customOptionsItems.forEach(item => {
             item.addEventListener('click', () => {
                 const region = item.getAttribute('data-value');
-                filterHeading.innerHTML = `${region} <ion-icon name="chevron-down-outline"></ion-icon>`;
+                filterHeading.innerHTML = `${region === 'All' ? 'Filter by Region' : region} <ion-icon name="chevron-down-outline"></ion-icon>`;
                 customOptions.style.display = 'none';
                 filterCountries(region);
                 opneDropDown()

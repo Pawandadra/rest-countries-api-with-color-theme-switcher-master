@@ -49,7 +49,7 @@
 
 #filter{
     height: fit-content;
-    z-index: 200;
+    z-index: 20;
     cursor: pointer;
 }
 
